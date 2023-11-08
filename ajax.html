@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Call Example with jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button id="apiButton">Call API</button>
+    <div id="result"></div>
+
+    <script>
+        $(document).ready(function () {
+            $("#apiButton").click(function () {
+                // URL of the API you want to call
+                const apiUrl = "http://127.0.0.1:8000/api/test"; // Replace with your API URL
+
+                // Make an API request using jQuery's AJAX method
+                $.ajax({
+                    url: apiUrl,
+                    method: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        // Handle the API response here
+                        $("#result").html(JSON.stringify(data));
+                    },
+                    error: function (xhr, status, error) {
+                        // Handle errors
+                        $("#result").html("Error: " + error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

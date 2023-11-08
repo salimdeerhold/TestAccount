@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .normal{
+            background-color: yellow;
+            height: 50px;
+            width: 100%;
+        }
+        .active{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="desc" class="normal" onclick="onClick()">
+
+    </div>
+    
+</body>
+
+<script>
+    function onClick() {
+        console.log("click is happening");
+        const collection = document.getElementsByClassName("active");
+  if(collection.length === 0){
+      document.getElementById("desc").classList.add("active")
+  }else{
+    document.getElementById("desc").classList.remove("active")
+  }
+    }
+
+
+// const button = document.getElementById('desc')
+//  button.addEventListener('click',event=> {
+  
+//   console.log('click  is happend');
+//   const collection = document.getElementsByClassName("active");
+//   if(collection.length === 0){
+//       document.getElementById("desc").classList.add("active")
+//   }else{
+//     document.getElementById("desc").classList.remove("active")
+//   }
+  
+// })
+</script>
+</html>
